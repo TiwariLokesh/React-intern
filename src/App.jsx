@@ -1,9 +1,13 @@
 import React from 'react'
 
-const App = () => {
+import Quiz from "./components/Quiz";
+
+function App() {
   return (
-    <div className='bg-red-500'>App</div>
-  )
+    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <Quiz />
+    </div>
+  );
 }
 
-export default App
+export default App;
