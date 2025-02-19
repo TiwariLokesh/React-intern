@@ -67,7 +67,7 @@ const QuizComponent: React.FC = () => {
     setTimeout(() => {
       setFeedback(null)
       goToNextQuestion()
-    }, 1500)
+    }, 800)
   }
 
   const handleTimeout = () => {
