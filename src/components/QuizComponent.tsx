@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useQuiz } from "../context/QuizContext"
 import QuestionComponent from "./QuestionComponent"
 import Timer from "./Timer"
@@ -31,6 +31,8 @@ const QuizComponent: React.FC = () => {
     setAttempts,
   } = useQuiz()
 
+  const [feedback, setFeedback] = useState<string | null>(null)
+
   // Reset timer to 30 seconds on every question change
   useEffect(() => {
     setTimeRemaining(30)
@@ -38,7 +40,7 @@ const QuizComponent: React.FC = () => {
 
   useEffect(() => {
     if (timeRemaining === 0) {
-      handleNext() // Auto-move to next question
+      handleNext()
     }
   }, [timeRemaining])
 
@@ -49,11 +51,28 @@ const QuizComponent: React.FC = () => {
   }
 
   const handleNext = () => {
-    if (currentQuestionIndex < questions.length - 1) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1)
-    } else {
-      endQuiz()
+    if (userAnswers[currentQuestionIndex] === undefined) {
+      setFeedback("Please select an answer.")
+      return
     }
+
+    // Check if the selected answer is correct
+    if (userAnswers[currentQuestionIndex] === questions[currentQuestionIndex].correctAnswer) {
+      setFeedback("✅ Correct!")
+    } else {
+      setFeedback(`❌ Incorrect! The correct answer was: ${questions[currentQuestionIndex].correctAnswer}`)
+    }
+
+    // Wait 1.5 seconds before moving to the next question
+    setTimeout(() => {
+      setFeedback(null)
+
+      if (currentQuestionIndex < questions.length - 1) {
+        setCurrentQuestionIndex(currentQuestionIndex + 1)
+      } else {
+        endQuiz()
+      }
+    }, 1500)
   }
 
   const endQuiz = () => {
@@ -79,7 +98,7 @@ const QuizComponent: React.FC = () => {
       totalQuestions: questions.length,
     }
     setAttempts([...attempts, newAttempt])
-    saveAttemptToIndexedDB(newAttempt) // Save to IndexedDB (bonus feature)
+    saveAttemptToIndexedDB(newAttempt)
   }
 
   const restartQuiz = () => {
@@ -87,7 +106,7 @@ const QuizComponent: React.FC = () => {
     setUserAnswers([])
     setScore(0)
     setQuizCompleted(false)
-    setTimeRemaining(30) // Reset timer for first question
+    setTimeRemaining(30)
   }
 
   if (quizCompleted) {
@@ -115,6 +134,11 @@ const QuizComponent: React.FC = () => {
         userAnswer={userAnswers[currentQuestionIndex]}
         isLastQuestion={currentQuestionIndex === questions.length - 1}
       />
+      {feedback && (
+        <div className="mt-4 p-3 text-white rounded bg-gray-700 text-center">
+          {feedback}
+        </div>
+      )}
     </div>
   )
 }
