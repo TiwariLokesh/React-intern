@@ -40,7 +40,7 @@ const QuizComponent: React.FC = () => {
 
   useEffect(() => {
     if (timeRemaining === 0) {
-      handleNext()
+      handleTimeout() // Skip question when time runs out
     }
   }, [timeRemaining])
 
@@ -52,7 +52,7 @@ const QuizComponent: React.FC = () => {
 
   const handleNext = () => {
     if (userAnswers[currentQuestionIndex] === undefined) {
-      setFeedback("Please select an answer.")
+      setFeedback("⚠️ Please select an answer.")
       return
     }
 
@@ -66,13 +66,25 @@ const QuizComponent: React.FC = () => {
     // Wait 1.5 seconds before moving to the next question
     setTimeout(() => {
       setFeedback(null)
-
-      if (currentQuestionIndex < questions.length - 1) {
-        setCurrentQuestionIndex(currentQuestionIndex + 1)
-      } else {
-        endQuiz()
-      }
+      goToNextQuestion()
     }, 1500)
+  }
+
+  const handleTimeout = () => {
+    setFeedback("⏳ Time's up! Question skipped.")
+
+    setTimeout(() => {
+      setFeedback(null)
+      goToNextQuestion()
+    }, 1500)
+  }
+
+  const goToNextQuestion = () => {
+    if (currentQuestionIndex < questions.length - 1) {
+      setCurrentQuestionIndex(currentQuestionIndex + 1)
+    } else {
+      endQuiz()
+    }
   }
 
   const endQuiz = () => {
