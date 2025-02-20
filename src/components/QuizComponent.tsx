@@ -138,49 +138,10 @@ const QuizComponent: React.FC = () => {
   }
 
   return (
-    // <div className="bg-white p-8 rounded-lg shadow-md max-w-2xl w-full">
-    //   <Timer />
-    //   <QuestionComponent
-    //     question={questions[currentQuestionIndex]}
-    //     onAnswer={handleAnswer}
-    //     onNext={handleNext}
-    //     userAnswer={userAnswers[currentQuestionIndex]}
-    //     isLastQuestion={currentQuestionIndex === questions.length - 1}
-    //   />
-    //   {feedback && (
-    //     <div className="mt-4 p-3 text-white rounded bg-gray-700 text-center">
-    //       {feedback}
-    //     </div>
-    //   )}
-    // </div>
+   
 
-    // <div className="bg-gray-200 p-8 gap-8 w-5/6 h-[700px] flex">
-    //   <div className=" w-[40%] h-auto bg-gray-600 border-[#084c71] p-2 flex justify-center items-center">
-    //     <img
-    //       src="../src/assets/quizimage.svg"
-    //       alt="Quiz Illustration"
-    //       className="rounded-lg"
-    //     />
-    //   </div>
-    //   <div className="flex-1 pl-6">
-    //     <Timer />
-    //     <QuestionComponent
-    //       question={questions[currentQuestionIndex]}
-    //       onAnswer={handleAnswer}
-    //       onNext={handleNext}
-    //       userAnswer={userAnswers[currentQuestionIndex]}
-    //       isLastQuestion={currentQuestionIndex === questions.length - 1}
-    //     />
-    //     {feedback && (
-    //       <div className="mt-4 p-3 text-white rounded bg-gray-700 text-center">
-    //         {feedback}
-    //       </div>
-    //     )}
-    //   </div>
-    // </div>
-
-    <div className="bg-gray-200 p-8 gap-8 w-5/6 h-[600px] flex flex-col">
-      <div className="flex flex-grow gap-8">
+    <div className="bg-gray-200 p-8 gap-12 w-5/6 h-[600px] flex flex-col">
+      <div className="flex flex-col md:flex-row gap-8 ">
         <div className="w-[40%] h-auto bg-gray-600 border-[#084c71] p-2 flex justify-center items-center">
           <img
             src="../src/assets/quizimage.svg"
