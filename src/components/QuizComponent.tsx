@@ -144,7 +144,7 @@ const QuizComponent: React.FC = () => {
       <div className="flex flex-col md:flex-row gap-8 ">
         <div className="w-[40%] h-auto bg-gray-600 border-[#084c71] p-2 flex justify-center items-center">
           <img
-            src="../src/assets/quizimage.svg"
+            src="/public/assets/quizimage.svg"
             alt="Quiz Illustration"
             className="rounded-lg"
           />

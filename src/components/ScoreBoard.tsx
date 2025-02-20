@@ -8,7 +8,7 @@ const ScoreBoard: React.FC = () => {
   return (
     <div className="flex justify-between gap-8">
       <img 
-        src="../src/assets/congratulation.svg" 
+        src="/public/assets/congratulation.svg" 
         alt="Congratulations" 
         className="w-[40%] max-w-sm mr-6 bg-gray-600"
       />
