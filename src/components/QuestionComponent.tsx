@@ -29,15 +29,15 @@ const QuestionComponent: React.FC<QuestionComponentProps> = ({
 
   return (
     <div className="mb-6">
-      <h2 className="text-xl font-bold mb-4">{question.text}</h2>
+      <h2 className="text-5xl tracking-wide  font-bold mb-4">{question.text}</h2>
       {question.type === "multiple-choice" ? (
-        <div className="space-y-2">
+        <div className="grid grid-cols-2 gap-4">
           {question.options!.map((option, index) => (
             <button
               key={index}
               onClick={() => handleAnswer(option)}
-              className={`w-full text-left p-2 rounded ${
-                userAnswer === option ? "bg-blue-500 text-white" : "bg-gray-200 hover:bg-gray-300 transition-colors"
+              className={`w-full text-left p-4 border-2 border-[#4ea1ce] hover:border-[#084c71] rounded-full ${
+                userAnswer === option ? "bg-[#084c71] text-white" : "bg-gray-200 transition-colors"
               }`}
             >
               {option}
@@ -56,12 +56,14 @@ const QuestionComponent: React.FC<QuestionComponentProps> = ({
       <div className="mt-4 flex justify-between">
         <button
           onClick={onNext}
-          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors"
+          className="bg-[#1e78a9] text-white px-4 py-2 rounded-full hover:bg-[#084c71]"
         >
           {isLastQuestion ? "Finish Quiz" : "Next Question"}
         </button>
       </div>
     </div>
+
+
   )
 }
 

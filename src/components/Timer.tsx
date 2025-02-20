@@ -13,13 +13,13 @@ const Timer: React.FC = () => {
     }, 1000)
 
     return () => clearInterval(timer)
-  }, [setTimeRemaining])
+  }, [setTimeRemaining])    
 
   const minutes = Math.floor(timeRemaining / 60)
   const seconds = timeRemaining % 60
 
   return (
-    <div className="text-xl font-bold mb-4">
+    <div className="text-xl font-medium italic mb-4">
       Time Remaining: {minutes.toString().padStart(2, "0")}:{seconds.toString().padStart(2, "0")}
     </div>
   )

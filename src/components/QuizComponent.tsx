@@ -123,12 +123,13 @@ const QuizComponent: React.FC = () => {
 
   if (quizCompleted) {
     return (
-      <div className="bg-white p-8 rounded-lg shadow-md max-w-2xl w-full">
+      <div className="bg-gray-300 p-8 my-4 max-w-2xl w-full"
+      >
         <ScoreBoard />
         <AttemptHistory />
         <button
           onClick={restartQuiz}
-          className="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors"
+          className="mt-4 bg-[#1e78a9] text-white px-4 py-2 rounded-full hover:bg-[#084c71]"
         >
           Restart Quiz
         </button>
@@ -137,21 +138,87 @@ const QuizComponent: React.FC = () => {
   }
 
   return (
-    <div className="bg-white p-8 rounded-lg shadow-md max-w-2xl w-full">
-      <Timer />
-      <QuestionComponent
-        question={questions[currentQuestionIndex]}
-        onAnswer={handleAnswer}
-        onNext={handleNext}
-        userAnswer={userAnswers[currentQuestionIndex]}
-        isLastQuestion={currentQuestionIndex === questions.length - 1}
-      />
-      {feedback && (
-        <div className="mt-4 p-3 text-white rounded bg-gray-700 text-center">
-          {feedback}
+    // <div className="bg-white p-8 rounded-lg shadow-md max-w-2xl w-full">
+    //   <Timer />
+    //   <QuestionComponent
+    //     question={questions[currentQuestionIndex]}
+    //     onAnswer={handleAnswer}
+    //     onNext={handleNext}
+    //     userAnswer={userAnswers[currentQuestionIndex]}
+    //     isLastQuestion={currentQuestionIndex === questions.length - 1}
+    //   />
+    //   {feedback && (
+    //     <div className="mt-4 p-3 text-white rounded bg-gray-700 text-center">
+    //       {feedback}
+    //     </div>
+    //   )}
+    // </div>
+
+    // <div className="bg-gray-200 p-8 gap-8 w-5/6 h-[700px] flex">
+    //   <div className=" w-[40%] h-auto bg-gray-600 border-[#084c71] p-2 flex justify-center items-center">
+    //     <img
+    //       src="../src/assets/quizimage.svg"
+    //       alt="Quiz Illustration"
+    //       className="rounded-lg"
+    //     />
+    //   </div>
+    //   <div className="flex-1 pl-6">
+    //     <Timer />
+    //     <QuestionComponent
+    //       question={questions[currentQuestionIndex]}
+    //       onAnswer={handleAnswer}
+    //       onNext={handleNext}
+    //       userAnswer={userAnswers[currentQuestionIndex]}
+    //       isLastQuestion={currentQuestionIndex === questions.length - 1}
+    //     />
+    //     {feedback && (
+    //       <div className="mt-4 p-3 text-white rounded bg-gray-700 text-center">
+    //         {feedback}
+    //       </div>
+    //     )}
+    //   </div>
+    // </div>
+
+    <div className="bg-gray-200 p-8 gap-8 w-5/6 h-[600px] flex flex-col">
+      <div className="flex flex-grow gap-8">
+        <div className="w-[40%] h-auto bg-gray-600 border-[#084c71] p-2 flex justify-center items-center">
+          <img
+            src="../src/assets/quizimage.svg"
+            alt="Quiz Illustration"
+            className="rounded-lg"
+          />
         </div>
-      )}
+        <div className="flex-1 pl-6">
+          <Timer />
+          <QuestionComponent
+            question={questions[currentQuestionIndex]}
+            onAnswer={handleAnswer}
+            onNext={handleNext}
+            userAnswer={userAnswers[currentQuestionIndex]}
+            isLastQuestion={currentQuestionIndex === questions.length - 1}
+          />
+          {feedback && (
+            <div className="mt-4 p-3 text-white rounded bg-gray-700 text-center">
+              {feedback}
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Progress Bar */}
+      <div className="mt-4 w-full bg-gray-300 rounded-full h-4 overflow-hidden relative">
+        <div
+          className="bg-blue-500 h-full transition-all text-white flex items-center justify-center text-xs font-bold"
+          style={{
+            width: `${((currentQuestionIndex + 0) / questions.length) * 100}%`,
+          }}
+        >
+          {/* {`${Math.round(((currentQuestionIndex + 0) / questions.length) * 100)}%`} */}
+        </div>
+      </div>
+
     </div>
+
   )
 }
 

@@ -62,4 +62,3 @@ export const useQuiz = () => {
   }
   return context
 }
-
