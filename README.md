@@ -22,3 +22,20 @@ A **React + Vite** powered **Quiz Application** with features like **real-time a
 ```bash
 git clone https://github.com/yourusername/quiz-app.git
 cd quiz-app
+
+### 2️⃣ Install Dependencies
+```bash
+npm install
+
+### 3️⃣ Start the Development Server
+```bash
+npm run dev
+
+## ⚙️ Tech Stack
+React + Vite - Fast development with Hot Module Replacement (HMR).
+TypeScript - Ensures type safety and better developer experience.
+IndexedDB - Stores attempt history persistently.
+Tailwind CSS - Provides a sleek and modern UI.
+ESLint & Prettier - Maintains consistent code quality.
+
+## 🌍 Live Demo
