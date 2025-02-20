@@ -1,8 +1,24 @@
-# React + Vite
+# 🧠 Quiz App - React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A **React + Vite** powered **Quiz Application** with features like **real-time answer feedback**, **timed questions**, and **attempt history tracking** using **IndexedDB**.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ⚡ **Built with React + Vite** for fast performance.
+- 📝 **Supports multiple-choice and input-based questions**.
+- ✅ **Instant feedback on answers**:
+  - Correct answers are confirmed ✅.
+  - Incorrect answers are indicated ❌.
+  - Timer-based automatic question skipping ⏳.
+- ⏱️ **30-second countdown timer** for each question.
+- 📊 **Scoreboard summary** upon quiz completion.
+- 💾 **Persistent attempt history** using **IndexedDB**.
+
+---
+
+## 📥 Installation & Setup
+
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/yourusername/quiz-app.git
+cd quiz-app
