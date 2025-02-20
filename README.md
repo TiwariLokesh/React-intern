@@ -16,6 +16,12 @@ A **React + Vite** powered **Quiz Application** with features like **real-time a
 
 ---
 
+## 🌍 Live Demo
+react-intern-rust.vercel.app
+
+
+---
+
 ## 📥 Installation & Setup
 
 ### 1️⃣ Clone the Repository
@@ -23,6 +29,7 @@ A **React + Vite** powered **Quiz Application** with features like **real-time a
 git clone https://github.com/yourusername/quiz-app.git
 cd quiz-app
 
+---
 ### 2️⃣ Install Dependencies
 ```bash
 npm install
@@ -38,4 +45,4 @@ IndexedDB - Stores attempt history persistently.
 Tailwind CSS - Provides a sleek and modern UI.
 ESLint & Prettier - Maintains consistent code quality.
 
-## 🌍 Live Demo
+
