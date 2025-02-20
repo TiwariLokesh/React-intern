@@ -1,6 +1,6 @@
 import type React from "react";
 import { useQuiz } from "../context/QuizContext";
-
+import congratulations from '../../public/assets/congratulation.svg'
 const ScoreBoard: React.FC = () => {
   const { score, questions } = useQuiz();
   const percentage = ((score / questions.length) * 100).toFixed(2);
@@ -8,7 +8,7 @@ const ScoreBoard: React.FC = () => {
   return (
     <div className="flex justify-between gap-8">
       <img 
-        src="/public/assets/congratulation.svg" 
+        src={congratulations }
         alt="Congratulations" 
         className="w-[40%] max-w-sm mr-6 bg-gray-600"
       />

@@ -7,7 +7,7 @@ import QuestionComponent from "./QuestionComponent"
 import Timer from "./Timer"
 import ScoreBoard from "./ScoreBoard"
 import AttemptHistory from "./AttemptHistory"
-
+import quiz from '../../public/assets/quizimage.svg'
 interface QuizAttempt {
   date: Date
   score: number
@@ -144,7 +144,7 @@ const QuizComponent: React.FC = () => {
       <div className="flex flex-col md:flex-row gap-8 ">
         <div className="w-[40%] h-auto bg-gray-600 border-[#084c71] p-2 flex justify-center items-center">
           <img
-            src="/public/assets/quizimage.svg"
+            src={quiz}
             alt="Quiz Illustration"
             className="rounded-lg"
           />
