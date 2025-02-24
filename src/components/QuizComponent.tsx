@@ -149,6 +149,7 @@ const QuizComponent: React.FC = () => {
             className="rounded-lg w-[80%]"
           />
         </div>
+        
         <div className="flex-1 pl-6">
           <Timer />
           <QuestionComponent
