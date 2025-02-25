@@ -152,6 +152,7 @@ const QuizComponent: React.FC = () => {
         
         <div className="flex-1 pl-6">
           <Timer />
+          
           <QuestionComponent
             question={questions[currentQuestionIndex]}
             onAnswer={handleAnswer}
