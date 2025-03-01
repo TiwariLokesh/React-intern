@@ -154,6 +154,7 @@ const QuizComponent: React.FC = () => {
           <Timer />
           
           <QuestionComponent
+          
             question={questions[currentQuestionIndex]}
             onAnswer={handleAnswer}
             onNext={handleNext}
