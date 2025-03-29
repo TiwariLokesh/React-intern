@@ -155,6 +155,7 @@ const QuizComponent: React.FC = () => {
           
           <QuestionComponent
           
+          
             question={questions[currentQuestionIndex]}
             onAnswer={handleAnswer}
             onNext={handleNext}
